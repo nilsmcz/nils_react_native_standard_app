@@ -15,6 +15,12 @@ export default function InputPrimary() {
     const handleViewClick = () => {
         setIsEditing(true);
     };
+
+    const handleBlur = () => {
+        if (textInputValue.trim() === '') {
+            setIsEditing(false);
+        }
+    };
     
     return (
         <TouchableOpacity onPress={handleViewClick} activeOpacity={1}>
@@ -22,9 +28,10 @@ export default function InputPrimary() {
                 <View style={{flex: 1, display: "flex", flexDirection:"column", paddingLeft: 8, height: "100%", justifyContent:"center", alignItems:"flex-start"}}>
                     { isEditing ?
                         <TextInput
-                            style={{flex: 1, paddingLeft: 8, fontSize: 16, fontFamily: 'Space Grotesk Regular', color:"#101010"}}
+                            style={{flex: 1, fontSize: 16, fontFamily: 'Space Grotesk Regular', color:"#101010"}}
                             value={textInputValue}
                             onChangeText={handleInputChange}
+                            onBlur={handleBlur}
                             autoFocus
                         />
                         :
