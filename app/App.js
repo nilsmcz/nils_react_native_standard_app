@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useState } from 'react';
 import {SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,useColorScheme,View,} from 'react-native';
 import {Colors,DebugInstructions,Header,LearnMoreLinks,ReloadInstructions,} from 'react-native/Libraries/NewAppScreen';
 
@@ -16,6 +16,7 @@ import InputPrimary from './components/InputPrimary';
 
 function App(){
   const isDarkMode = useColorScheme() === 'dark';
+  const [textInputValue, setTextInputValue] = useState('')
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -25,6 +26,11 @@ function App(){
     console.log("Button wurde gedrückt!");
   };
 
+  const handleInputChangeApp = (value) => {
+    setTextInputValue(value);
+    console.log("textInputValue in App.js:", value);
+  };
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundStyle.backgroundColor}/>
@@ -32,7 +38,8 @@ function App(){
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
           <View style={{display:"flex", width:"95%", gap:13}}>
             <Text>Test</Text>
-            <InputPrimary/>
+            {/* <InputPrimary title="Email" error="Das ist keine gültige E-Mail-Adresse."/> */}
+            <InputPrimary title="Email" icon="x" onInputChange={handleInputChangeApp} disabled={true}/>
             <ButtonPrimary buttonText="Registrieren" isLoading={false} onPress={handleButtonPress}/>
           </View>
         </View>
