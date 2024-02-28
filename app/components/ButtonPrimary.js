@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function ButtonPrimary({ buttonText, isLoading, onPress }) {
+export default function ButtonPrimary({ buttonText, isLoading, onPress, disabled}) {
     
     const handlePress = () => {
-        if (onPress) {
+        if (onPress && !disabled && !isLoading) {
             onPress();
         }
     };

@@ -5,8 +5,8 @@ import Check from '../assets/graphics/icons/check.svg';
 import Exclamation from '../assets/graphics/icons/exclamation.svg';
 import X from '../assets/graphics/icons/x.svg';
 
-export default function InputPrimary({ title, error, icon, onInputChange, disabled}) {
-    const [textInputValue, setTextInputValue] = useState('')
+export default function InputPrimary({ title, error, icon, onInputChange, disabled, preValue}) {
+    const [textInputValue, setTextInputValue] = useState(preValue ? preValue : '')
     const [isEditing, setIsEditing] = useState(false);
 
     const defaultBackgroundColor = 'white';
@@ -27,7 +27,9 @@ export default function InputPrimary({ title, error, icon, onInputChange, disabl
       };
 
     const handleViewClick = () => {
-        setIsEditing(true);
+        if(!disabled){
+            setIsEditing(true);
+        }
     };
 
     const handleBlur = () => {
@@ -35,6 +37,12 @@ export default function InputPrimary({ title, error, icon, onInputChange, disabl
             setIsEditing(false);
         }
     };
+
+    useEffect(() => {
+        if(preValue) {
+            setTextInputValue(preValue)
+        }
+    }, [preValue]);
 
     useEffect(() => {
         if(error) {
@@ -73,7 +81,7 @@ export default function InputPrimary({ title, error, icon, onInputChange, disabl
         <TouchableOpacity onPress={handleViewClick} activeOpacity={1}>
             <View style={{ display: "flex", flexDirection:"row", width: "100%", height: 56, borderRadius: 11, borderColor: inputBorderColor, borderWidth:1.2, alignItems:"center", backgroundColor:inputBackgroundColor}}>
                 <View style={{flex: 1, display: "flex", flexDirection:"column", paddingLeft: 8, height: "100%", justifyContent:"center", alignItems:"flex-start"}}>
-                    { isEditing ?
+                    { isEditing || textInputValue?
                         <View style={{display:"flex", flexDirection:"column", height:"100%", paddingTop:6, paddingBottom:4, gap:0}}>
                             <Text style={{display:"flex", fontSize:13, fontFamily: 'Space Grotesk Medium', color:"#3D7E4F", paddingBottom:0}}>{title}</Text>
                             <TextInput
@@ -81,7 +89,8 @@ export default function InputPrimary({ title, error, icon, onInputChange, disabl
                                 value={textInputValue}
                                 onChangeText={handleInputChange} //When the input is changed
                                 onBlur={handleBlur} //When the input is not focused
-                                autoFocus //Automatically focuses the input when accessable
+                                autoFocus={(disabled && preValue) ? false : true} //Automatically focuses the input when accessable
+                                editable={!disabled}
                             />
                         </View>
                         :

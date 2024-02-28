@@ -38,9 +38,8 @@ function App(){
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
           <View style={{display:"flex", width:"95%", gap:13}}>
             <Text>Test</Text>
-            {/* <InputPrimary title="Email" error="Das ist keine gültige E-Mail-Adresse."/> */}
-            <InputPrimary title="Email" icon="x" onInputChange={handleInputChangeApp} disabled={true}/>
-            <ButtonPrimary buttonText="Registrieren" isLoading={false} onPress={handleButtonPress}/>
+            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
+            <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false}/>
           </View>
         </View>
       </ScrollView>
