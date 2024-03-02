@@ -15,6 +15,7 @@ import InputPrimary from './components/InputPrimary';
 import InputHidden from './components/InputHidden';
 import Test from './components/Test';
 import TextButtonPrimary from './components/TextButtonPrimary';
+import LogoButtonPrimary from './components/LogoButtonPrimary';
 
 //Screens
 
@@ -47,6 +48,7 @@ function App(){
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false}/>
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
+            <LogoButtonPrimary buttonText="Registrieren" isLoading={false} onPress={handleButtonPress} disabled={false}/>
           </View>
         </View>
       </ScrollView>
