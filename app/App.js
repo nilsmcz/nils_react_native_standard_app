@@ -16,12 +16,16 @@ import InputHidden from './components/InputHidden';
 import Test from './components/Test';
 import TextButtonPrimary from './components/TextButtonPrimary';
 import LogoButtonPrimary from './components/LogoButtonPrimary';
-
+import Divider from './components/Divider';
+//Assets
+import GoogleLogo from './assets/graphics/logos/google.svg';
 //Screens
 
 function App(){
   const isDarkMode = useColorScheme() === 'dark';
   const [textInputValue, setTextInputValue] = useState('')
+
+  const googleLogo = (<GoogleLogo width={20} height={20}/>);
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -44,11 +48,12 @@ function App(){
           <View style={{display:"flex", width:"93%", gap:13}}>
             <Text>Test</Text>
             <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
+            <Divider text="oder"/>
             <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error=""/>
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false}/>
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
-            <LogoButtonPrimary buttonText="Registrieren" isLoading={false} onPress={handleButtonPress} disabled={false}/>
+            <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo}/>
           </View>
         </View>
       </ScrollView>
