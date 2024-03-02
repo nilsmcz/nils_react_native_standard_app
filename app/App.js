@@ -47,7 +47,7 @@ function App(){
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundStyle.backgroundColor}/>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
-        <HeaderPrimary title="Login" back="zurück" onBackClick={() => console.log("Back Click")}/>
+        <HeaderPrimary title="Login" back="zurück" onBackClick={() => console.log("Back Click")} next="nächstes" onNextClick={() => console.log("next CLick")}/>
           <View style={{display:"flex", width:"93%", gap:13}}>
             <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
             <Divider text="oder"/>
