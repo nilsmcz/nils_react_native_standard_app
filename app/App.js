@@ -12,6 +12,8 @@ import {Colors,DebugInstructions,Header,LearnMoreLinks,ReloadInstructions,} from
 //Components
 import ButtonPrimary from './components/ButtonPrimary';
 import InputPrimary from './components/InputPrimary';
+import InputHidden from './components/InputHidden';
+import Test from './components/Test';
 //Screens
 
 function App(){
@@ -36,10 +38,12 @@ function App(){
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundStyle.backgroundColor}/>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
-          <View style={{display:"flex", width:"95%", gap:13}}>
+          <View style={{display:"flex", width:"93%", gap:13}}>
             <Text>Test</Text>
-            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
+            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemddddddddddddddddddddddddddddddddail.de"/>
+            <InputHidden title="Passwort" icon="" onInputChange={handleInputChangeApp} error=""/>
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false}/>
+            {/* <Test/> */}
           </View>
         </View>
       </ScrollView>

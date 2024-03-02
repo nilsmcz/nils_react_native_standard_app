@@ -97,9 +97,10 @@ export default function InputPrimary({ title, error, icon, onInputChange, disabl
                         <Text style={{fontSize:16, fontFamily: 'Space Grotesk Regular', color:"#101010"}}>{title}</Text>
                     }
                 </View>
+                {currentIcon &&
                 <View style={{ display:"flex", width: 35, height: "100%", justifyContent:"center", alignItems:"center"}}>
-                    {currentIcon && currentIcon}
-                </View>
+                    {currentIcon}
+                </View>}
             </View>
             {error &&
             <View style={{display:"flex", height:"auto", width:"auto", marginTop:3}}>
