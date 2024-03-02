@@ -17,6 +17,8 @@ import Test from './components/Test';
 import TextButtonPrimary from './components/TextButtonPrimary';
 import LogoButtonPrimary from './components/LogoButtonPrimary';
 import Divider from './components/Divider';
+import HeaderPrimary from './components/HeaderPrimary';
+
 //Assets
 import GoogleLogo from './assets/graphics/logos/google.svg';
 //Screens
@@ -45,15 +47,15 @@ function App(){
       <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} backgroundColor={backgroundStyle.backgroundColor}/>
       <ScrollView contentInsetAdjustmentBehavior="automatic" style={backgroundStyle}>
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
+        <HeaderPrimary title="Login" back="zurück" onBackClick={() => console.log("Back Click")}/>
           <View style={{display:"flex", width:"93%", gap:13}}>
-            <Text>Test</Text>
             <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
             <Divider text="oder"/>
             <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error=""/>
-            <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false}/>
+            <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} error="Google Anmeldung zurzeit nicht möglich"/>
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
-            <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo}/>
+            <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
           </View>
         </View>
       </ScrollView>
