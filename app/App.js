@@ -14,6 +14,8 @@ import ButtonPrimary from './components/ButtonPrimary';
 import InputPrimary from './components/InputPrimary';
 import InputHidden from './components/InputHidden';
 import Test from './components/Test';
+import TextButtonPrimary from './components/TextButtonPrimary';
+
 //Screens
 
 function App(){
@@ -40,10 +42,11 @@ function App(){
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
           <View style={{display:"flex", width:"93%", gap:13}}>
             <Text>Test</Text>
-            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemddddddddddddddddddddddddddddddddail.de"/>
-            <InputHidden title="Passwort" icon="" onInputChange={handleInputChangeApp} error=""/>
+            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
+            <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error=""/>
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false}/>
             {/* <Test/> */}
+            <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
           </View>
         </View>
       </ScrollView>

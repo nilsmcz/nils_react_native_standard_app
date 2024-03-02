@@ -23,8 +23,8 @@ export default function InputHidden({ title, error, icon, onInputChange, disable
     const check = (<Check width={17} height={17}/>);
     const exclamation = (<Exclamation width={17} height={17}/>);
     const x = (<X width={20} height={20}/>);
-    const previewClosed = (<PreviewClosed width={23} height={23}/>);
-    const previewOpen = (<PreviewOpen width={23} height={23}/>);
+    const previewClosed = (<PreviewClosed width={25} height={25}/>);
+    const previewOpen = (<PreviewOpen width={25} height={25}/>);
 
     const handleInputChange = (text) => {
         setTextInputValue(text);
