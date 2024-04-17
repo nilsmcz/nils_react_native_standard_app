@@ -1,6 +1,11 @@
 import { View, Text, TouchableOpacity  } from 'react-native'
 import React from 'react'
 
+/**
+ * Text button with primary color
+ * @param {string} text Text on the button
+ * @param {function} onPress Function that is called when the button is pressed 
+ */
 export default function TextButtonPrimary({ text, onPress}) {
 
     const handleViewClick = () => {

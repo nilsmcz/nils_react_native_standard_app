@@ -1,6 +1,15 @@
 import { View, Text, StyleSheet, ActivityIndicator, TouchableOpacity } from 'react-native'
 import React from 'react'
 
+/**
+ * Button with primary styling and a logo
+ * @param {string} buttonText Text on the button
+ * @param {boolean} isLoading Loading state
+ * @param {function} onPress Function that is called when the button is pressed
+ * @param {boolean} disabled Disables the button
+ * @param {string} error Error message
+ * @param {object} logoSvg Logo svg 
+ */
 export default function LogoButtonPrimary({ buttonText, isLoading, onPress, disabled, logoSvg, error}) {
     
     const handlePress = () => {

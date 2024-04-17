@@ -1,6 +1,10 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
+/**
+ * Divider with text in the middle
+ * @param {string} text Text in the middle of the divider
+ */
 export default function Divider({ text }) {
     return (
         <View style={{ display:"flex", width:"100%", height:"auto", flexDirection:"row", justifyContent:"center", alignItems:"center", gap:15, paddingLeft:15, paddingRight:15}}>

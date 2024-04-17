@@ -1,6 +1,12 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { View, TextInput, StyleSheet } from 'react-native';
 
+/**
+ * Code input field with 5 characters
+ * @param {string} defaultValue Default value of the input
+ * @param {function} onInputChange Function that is called when the input changes
+ * @param {string} value Value of the input 
+ */
 export default function CodePrimary({ defaultValue, onInputChange, value}) {
   const startValue = defaultValue ? defaultValue : ''; 
   const [inputValues, setInputValues] = useState([startValue, startValue, startValue, startValue, startValue]);
@@ -54,7 +60,7 @@ export default function CodePrimary({ defaultValue, onInputChange, value}) {
   const handleBlur = (index) => {
     const newInputValues = [...inputValues];
     if (!newInputValues[index]) {
-      newInputValues[index] = '0';
+      newInputValues[index] = defaultValue;
     }
     setInputValues(newInputValues);
   };

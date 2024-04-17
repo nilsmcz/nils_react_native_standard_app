@@ -7,6 +7,15 @@ import X from '../assets/graphics/icons/x.svg';
 import PreviewClosed from '../assets/graphics/icons/preview_closed.svg';
 import PreviewOpen from '../assets/graphics/icons/preview_open.svg';
 
+/**
+ * Text input with hidden text and preview icon
+ * @param {string} title Title of the input 
+ * @param {string} error Error message
+ * @param {string} icon - 'check' | 'exclamation' | 'x'
+ * @param {function} onInputChange Function that is called when the input changes
+ * @param {boolean} disabled Disables the input
+ * @param {string} preValue Predefined value
+ */
 export default function InputHidden({ title, error, icon, onInputChange, disabled, preValue}) {
     const [textInputValue, setTextInputValue] = useState(preValue ? preValue : '')
     const [isEditing, setIsEditing] = useState(false);

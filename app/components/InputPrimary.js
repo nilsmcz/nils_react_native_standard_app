@@ -5,6 +5,15 @@ import Check from '../assets/graphics/icons/check.svg';
 import Exclamation from '../assets/graphics/icons/exclamation.svg';
 import X from '../assets/graphics/icons/x.svg';
 
+/**
+ * Input field with title and error message
+ * @param {string} title Title of the input
+ * @param {string} error Error message
+ * @param {string} icon - 'check' | 'exclamation' | 'x'
+ * @param {function} onInputChange Function that is called when the input changes
+ * @param {boolean} disabled Disables the input
+ * @param {string} preValue Predefined value 
+ */
 export default function InputPrimary({ title, error, icon, onInputChange, disabled, preValue}) {
     const [textInputValue, setTextInputValue] = useState(preValue ? preValue : '')
     const [isEditing, setIsEditing] = useState(false);
