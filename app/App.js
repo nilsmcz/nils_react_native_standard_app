@@ -18,6 +18,7 @@ import TextButtonPrimary from './components/TextButtonPrimary';
 import LogoButtonPrimary from './components/LogoButtonPrimary';
 import Divider from './components/Divider';
 import HeaderPrimary from './components/HeaderPrimary';
+import CodePrimary from './components/CodePrimary';
 
 //Assets
 import GoogleLogo from './assets/graphics/logos/google.svg';
@@ -49,13 +50,14 @@ function App(){
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
         <HeaderPrimary line={true} titleLeft="Login" titleRight="test" back="zurück" onBackClick={() => console.log("Back Click")} next="nächstes" onNextClick={() => console.log("next CLick")}/>
           <View style={{display:"flex", width:"93%", gap:13}}>
-            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={true} error="" preValue="nils.morczinietz@vodafonemail.de"/>
+            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={false} error="" preValue="nils.morczinietz@vodafonemail.de"/>
             <Divider text="oder"/>
             <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error=""/>
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} error="Google Anmeldung zurzeit nicht möglich"/>
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
             <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
+            <CodePrimary onInputChange={handleInputChangeApp} value=""/>
           </View>
         </View>
       </ScrollView>
