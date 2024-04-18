@@ -1,4 +1,8 @@
-<img src="https://i.ibb.co/nfC2y8z/image.png" alt="TH Köln Logo" width="300">
+<div style="display: flex; gap: 10px">
+  <img src="https://i.ibb.co/Jz4LDZG/image1.png" alt="Preview1" width="250">
+  <img src="https://i.ibb.co/MBffSWf/image2.png" alt="Preview2" width="250">
+<img src="https://i.ibb.co/d2C22C6/image3.png" alt="Preview3" width="250">
+</div>
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
