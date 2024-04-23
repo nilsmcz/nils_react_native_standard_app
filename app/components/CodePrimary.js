@@ -1,5 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { View, TextInput, StyleSheet } from 'react-native';
+import { View, TextInput, StyleSheet, Text } from 'react-native';
 
 /**
  * Code input field with 5 characters
@@ -75,19 +75,25 @@ export default function CodePrimary({ defaultValue, onInputChange, value, error}
   };
 
   return (
-    <View style={{flexDirection: 'row', justifyContent: 'space-evenly', width: '100%', height: 56}}>
-      {inputValues.map((value, index) => (
-        <TextInput
-          key={index}
-          ref={inputRefs[index]}
-          style={{height: '100%', width: 56, borderRadius: 11, borderColor: inputBorderColor, borderWidth: 1.2, fontSize: 16, fontFamily: 'Space Grotesk Regular', color: '#101010', textAlign: 'center'}}
-          value={value}
-          onChangeText={(text) => handleChangeText(index, text)}
-          maxLength={1} // Begrenze die Länge auf 1 Zeichen
-          onFocus={() => handleFocus(index)}
-          onBlur={() => handleBlur(index)}
-        />
-      ))}
+    <View style={{flexDirection: 'column', justifyContent: 'space-evenly', width: '100%', height: 'auto'}}>
+      <View style={{flexDirection: 'row', justifyContent: 'space-around', width: '100%', height: 56}}>
+        {inputValues.map((value, index) => (
+          <TextInput
+            key={index}
+            ref={inputRefs[index]}
+            style={{height: '100%', width: 56, borderRadius: 11, borderColor: inputBorderColor, borderWidth: 1.2, fontSize: 16, fontFamily: 'Space Grotesk Regular', color: '#101010', textAlign: 'center'}}
+            value={value}
+            onChangeText={(text) => handleChangeText(index, text)}
+            maxLength={1} // Begrenze die Länge auf 1 Zeichen
+            onFocus={() => handleFocus(index)}
+            onBlur={() => handleBlur(index)}
+          />
+        ))}
+      </View>
+      {error &&
+      <View style={{display:"flex", height:"auto", width:"auto", marginTop:3}}>
+        <Text style={{color:"#E14A4A", fontSize:13, fontFamily: 'Space Grotesk Regular'}}>{error}</Text>
+      </View>}
     </View>
   );
 }

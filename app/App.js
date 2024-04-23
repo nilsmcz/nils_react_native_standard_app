@@ -52,12 +52,12 @@ function App(){
           <View style={{display:"flex", width:"93%", gap:13}}>
             <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={false} error="" preValue="nils.morczinietz@vodafonemail.de"/>
             <Divider text="oder"/>
-            <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error=""/>
+            <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error="TEst"/>
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} error="Google Anmeldung zurzeit nicht möglich"/>
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
             <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
-            <CodePrimary onInputChange={handleInputChangeApp} value="" error={true}/>
+            <CodePrimary onInputChange={handleInputChangeApp} value="" error="Code nicht gültig!"/>
           </View>
         </View>
       </ScrollView>
