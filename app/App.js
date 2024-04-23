@@ -57,7 +57,7 @@ function App(){
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
             <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
-            <CodePrimary onInputChange={handleInputChangeApp} value=""/>
+            <CodePrimary onInputChange={handleInputChangeApp} value="" error={true}/>
           </View>
         </View>
       </ScrollView>

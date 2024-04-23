@@ -7,10 +7,11 @@ import { View, TextInput, StyleSheet } from 'react-native';
  * @param {function} onInputChange Function that is called when the input changes
  * @param {string} value Value of the input 
  */
-export default function CodePrimary({ defaultValue, onInputChange, value}) {
+export default function CodePrimary({ defaultValue, onInputChange, value, error}) {
   const startValue = defaultValue ? defaultValue : ''; 
   const [inputValues, setInputValues] = useState([startValue, startValue, startValue, startValue, startValue]);
   const inputRefs = inputValues.map(() => useRef(null));
+  const [inputBorderColor, setInputBorderColor] = useState('#AFAFAF')
 
   useEffect(() => {
     if(value) {
@@ -31,6 +32,14 @@ export default function CodePrimary({ defaultValue, onInputChange, value}) {
       }
     });
   }, []);
+
+  useEffect(() => {
+    if(error) {
+      setInputBorderColor("#E14A4A")
+    } else {
+      setInputBorderColor("#AFAFAF")
+    }
+}, [error, inputBorderColor]);
 
   const handleChangeText = (index, value) => {
     const newInputValues = [...inputValues];
@@ -66,12 +75,12 @@ export default function CodePrimary({ defaultValue, onInputChange, value}) {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={{flexDirection: 'row', justifyContent: 'space-evenly', width: '100%', height: 56}}>
       {inputValues.map((value, index) => (
         <TextInput
           key={index}
           ref={inputRefs[index]}
-          style={styles.input}
+          style={{height: '100%', width: 56, borderRadius: 11, borderColor: inputBorderColor, borderWidth: 1.2, fontSize: 16, fontFamily: 'Space Grotesk Regular', color: '#101010', textAlign: 'center'}}
           value={value}
           onChangeText={(text) => handleChangeText(index, text)}
           maxLength={1} // Begrenze die Länge auf 1 Zeichen
@@ -82,23 +91,3 @@ export default function CodePrimary({ defaultValue, onInputChange, value}) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-    width: '100%',
-    height: 56,
-  },
-  input: {
-    height: '100%',
-    width: 56,
-    borderRadius: 11,
-    borderColor: '#AFAFAF',
-    borderWidth: 1.2,
-    fontSize: 16,
-    fontFamily: 'Space Grotesk Regular',
-    color: '#101010',
-    textAlign: 'center',
-  },
-});
