@@ -75,7 +75,7 @@ export default function CodePrimary({ defaultValue, onInputChange, value, error}
   };
 
   return (
-    <View style={{flexDirection: 'column', justifyContent: 'space-evenly', width: '100%', height: 'auto'}}>
+    <View style={{flexDirection: 'column', width: '100%', height: 'auto'}}>
       <View style={{flexDirection: 'row', justifyContent: 'space-around', width: '100%', height: 56}}>
         {inputValues.map((value, index) => (
           <TextInput
