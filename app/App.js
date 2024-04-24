@@ -21,7 +21,7 @@ import HeaderPrimary from './components/HeaderPrimary';
 import CodePrimary from './components/CodePrimary';
 import ContextBox from './components/ContextBox';
 import ContextButton from './components/ContextButton';
-
+import ContextDividerTitle from './components/ContextDividerTitle';
 //Assets
 import GoogleLogo from './assets/graphics/logos/google.svg';
 //Screens
@@ -60,7 +60,9 @@ function App(){
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
             <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
             <CodePrimary onInputChange={handleInputChangeApp} value="" error="Code nicht gültig!"/>
+            <ContextDividerTitle text="Einstellungen"/>
             <ContextBox/>
+            <ContextDividerTitle text="Anderes"/>
             <ContextButton text="Abmelden" error=""/>
             <ContextButton text="Abmelden" error="Es ist ein Fehler aufgetren"/>
           </View>
