@@ -51,7 +51,7 @@ function App(){
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
         <HeaderPrimary line={true} titleLeft="Login" titleRight="test" back="zurück" onBackClick={() => console.log("Back Click")} next="nächstes" onNextClick={() => console.log("next CLick")}/>
           <View style={{display:"flex", width:"93%", gap:13}}>
-            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={false} error="" preValue="nils.morczinietz@vodafonemail.de"/>
+            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={false} error="" preValue="nils.m@vodafonemail.de"/>
             <Divider text="oder"/>
             <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error="TEst"/>
             <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} error="Google Anmeldung zurzeit nicht möglich"/>
