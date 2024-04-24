@@ -20,6 +20,7 @@ import Divider from './components/Divider';
 import HeaderPrimary from './components/HeaderPrimary';
 import CodePrimary from './components/CodePrimary';
 import ContextBox from './components/ContextBox';
+import ContextButton from './components/ContextButton';
 
 //Assets
 import GoogleLogo from './assets/graphics/logos/google.svg';
@@ -60,6 +61,7 @@ function App(){
             <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
             <CodePrimary onInputChange={handleInputChangeApp} value="" error="Code nicht gültig!"/>
             <ContextBox/>
+            <ContextButton text="Abmelden"/>
           </View>
         </View>
       </ScrollView>
