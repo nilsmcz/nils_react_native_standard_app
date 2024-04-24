@@ -57,8 +57,8 @@ export default function ContextBox() {
                     </View>
                     <View style={{flex:1, display:"flex", alignItems:"flex-start", justifyContent:"center", gap:5}}>
                         <Text style={{  fontSize:20, fontFamily: 'Space Grotesk Bold', color:"#101010", width:"auto"}}>Profil bearbeiten</Text>
-                        <Text style={{ fontSize: 16, fontFamily: 'Space Grotesk Medium', color:"#101010", width:'auto'}}>
-                            Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung Beschreibung
+                        <Text style={{ fontSize: 16, fontFamily: 'Space Grotesk Medium', color:"#101010", width:'auto', paddingRight:15}}>
+                            Beschreibungsssssssssssssssssssssssss
                         </Text>
                     </View>
                     <View style={{display:"flex", alignItems:"flex-end", width:40, justifyContent:"center"}}>

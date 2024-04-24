@@ -61,7 +61,8 @@ function App(){
             <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
             <CodePrimary onInputChange={handleInputChangeApp} value="" error="Code nicht gültig!"/>
             <ContextBox/>
-            <ContextButton text="Abmelden"/>
+            <ContextButton text="Abmelden" error=""/>
+            <ContextButton text="Abmelden" error="Es ist ein Fehler aufgetren"/>
           </View>
         </View>
       </ScrollView>
