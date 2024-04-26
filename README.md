@@ -1,6 +1,6 @@
 <div style="display: flex; gap: 10px">
-  <img src="https://i.ibb.co/Cs0ktGC/image1.png" alt="preview1" width="250">
-  <img src="https://i.ibb.co/vwc8F9Z/image2.png" alt="preview2" width="250">
+  <img src="https://i.ibb.co/gmDfGCZ/image1.png" alt="preview1" width="250">
+  <img src="https://i.ibb.co/LSzVYsJ/image2.png" alt="preview2" width="250">
 </div>
 
 # Getting Started
