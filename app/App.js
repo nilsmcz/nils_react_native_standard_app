@@ -52,17 +52,17 @@ function App(){
         <View style={{   backgroundColor: isDarkMode ? Colors.black : Colors.white, gap: 10, justifyContent:"center", alignItems:"center"}}>
         <HeaderPrimary line={true} titleLeft="Login" titleRight="test" back="zurück" onBackClick={() => console.log("Back Click")} next="nächstes" onNextClick={() => console.log("next CLick")}/>
           <View style={{display:"flex", width:"93%", gap:13}}>
-            <InputPrimary title="Email" icon="check" onInputChange={handleInputChangeApp} disabled={false} error="" preValue="nils.m@vodafonemail.de"/>
+            <InputPrimary title="Email" icon="x" onInputChange={handleInputChangeApp} disabled={false} error="Email is invalid." preValue="firstname.lastname@mail.de"/>
             <Divider text="oder"/>
-            <InputHidden title="Passwort" icon="check" onInputChange={handleInputChangeApp} error="TEst"/>
-            <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} error="Google Anmeldung zurzeit nicht möglich"/>
+            <InputHidden title="Passwort" icon="exclamation" onInputChange={handleInputChangeApp} error="Password needs to be longer"/>
+            <ButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} error="Error message"/>
             {/* <Test/> */}
             <TextButtonPrimary text="Passwort vergessen?" onPress={()=>console.log("password reset pressed")}/>
-            <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Google Anmeldung zurzeit nicht möglich"/>
-            <CodePrimary onInputChange={handleInputChangeApp} value="" error="Code nicht gültig!"/>
+            <LogoButtonPrimary buttonText="Registrieren" isLoading={true} onPress={handleButtonPress} disabled={false} logoSvg={googleLogo} error="Error message"/>
+            <CodePrimary onInputChange={handleInputChangeApp} value="" error="Error message"/>
             <ContextDividerTitle text="Einstellungen"/>
             <ContextBox/>
-            <ContextDividerTitle text="Anderes"/>
+            <ContextDividerTitle text="Anderes1312"/>
             <ContextButton text="Abmelden" error=""/>
             <ContextButton text="Abmelden" error="Es ist ein Fehler aufgetren"/>
           </View>

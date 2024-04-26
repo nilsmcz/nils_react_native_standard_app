@@ -56,7 +56,7 @@ export default function InputPrimary({ title, error, icon, onInputChange, disabl
     useEffect(() => {
         if(error) {
             setInputBorderColor("#E14A4A")
-            setCurrentIcon(exclamation)
+            // setCurrentIcon(exclamation)
         }
     }, [error, inputBorderColor]);
 
